@@ -33,7 +33,7 @@ public let appBaseInfoPlist: [String: InfoPlist.Value] = [
     "CFBundleURLTypes": [
       [
         "CFBundleTypeRole" : "Viewer",
-        "CFBundleURLName" : "com.test.ios.myapp"
+        "CFBundleURLName" : "com.din.ios.do-it-now"
       ]
     ],
     "UIBackgroundModes": [
