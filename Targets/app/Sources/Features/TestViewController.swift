@@ -7,15 +7,6 @@
 //
 
 import UIKit
-import Moya
-import RxSwift
-import RxCocoa
-import Lottie
-import RxGesture
-import RxRelay
-import Nuke
-
-
 
 final class TestViewController: UIViewController {
 	override func viewDidLoad() {

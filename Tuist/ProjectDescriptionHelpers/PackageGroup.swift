@@ -50,7 +50,7 @@ public class DINDependencyGroup: DependencyGroup {
     
     public var fetchedPacakges: [DINTuistPlugin.FetchedPackage]?
     
-    public var managedPacakges: [DINTuistPlugin.ManagedPackage]?
+    public var managedPacakges: [DINTuistPlugin.ManagedPackage]? = []
     
     public var xcframeworks: [DINTuistPlugin.XCFramework]?
     
