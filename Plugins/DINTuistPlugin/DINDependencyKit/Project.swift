@@ -22,11 +22,25 @@ var dinDevelopKit = Target(
         DependencyResolver.generateAppTargetDependencies(by: DINDevelopKitDependencyGroup())
 )
 
+var dinTestKit = Target(
+    name: "DINTestKit",
+    platform: .iOS,
+    product: .framework,
+    productName: "DINTestKit",
+    bundleId: "com.din.DINTestKit",
+    deploymentTarget: .iOS(targetVersion: "14.0", devices: .iphone),
+    infoPlist: .default,
+    sources: ["Sources/**"],
+    resources: [],
+    dependencies: DependencyResolver.generateAppTargetDependencies(by: DINTestKitDependencyGroup())
+    )
+    
+
 var project = Project(
     name: "DINDependencyKit",
     organizationName: "DIN",
-    packages: DependencyResolver.generateProjectImportPackages(by: DINDevelopKitDependencyGroup()),
+    packages: DependencyResolver.generateProjectImportPackages(by: DINDevelopKitDependencyGroup(), DINTestKitDependencyGroup()),
     settings: setting,
-    targets: [dinDevelopKit]
+    targets: [dinDevelopKit, dinTestKit]
 )
 

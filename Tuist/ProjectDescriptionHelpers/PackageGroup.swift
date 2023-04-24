@@ -34,7 +34,7 @@ public class DINDependencyGroup: DependencyGroup {
     // 디버깅 패키지
     let debugerPackages: [DINTuistPlugin.ManagedPackage] = [
       .init(name: "FLEX", path: .init(url: "https://github.com/FLEXTool/FLEX"), version: .exact("5.22.10")),
-      .init(name: "Inject", path: .init(url: "https://github.com/minhaaan/Inject.git"), version: .branch("main")),
+      .init(name: "Inject", path: .init(url: "https://github.com/krzysztofzablocki/Inject.git"), version: .branch("main")),
       .init(name: "LookinServer", path: .init(url: "https://github.com/QMUI/LookinServer"), version: .exact("1.1.4")),
     ]
     
@@ -43,7 +43,7 @@ public class DINDependencyGroup: DependencyGroup {
       else if endpoint.needsDebugTools { managedPacakges?.append(contentsOf: debugerPackages) }
       
       if endpoint != .Release {
-        managedPacakges?.append(.init(name: "Pulse", path: .init(url: "https://github.com/kean/Pulse.git"), subModuleNames: ["Pulse", "PulseUI"], version: .exact("2.1.4")))
+        managedPacakges?.append(.init(name: "Pulse", path: .init(url: "https://github.com/kean/Pulse.git"), subModuleNames: ["Pulse", "PulseUI"], version: .upToNextMajor(from: "3.0.0")))
       }
     }
 

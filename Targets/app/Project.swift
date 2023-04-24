@@ -3,7 +3,7 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 import DINTuistPlugin
 
-// MARK: - Summery
+// MARK: - Summary
 private let productName: String = "DOITNOW"
 private let projectName: String = "do-it-now"
 private let organizationName = "DIN"
@@ -112,7 +112,7 @@ public var settings: Settings = {
   )
 }()
 
-let myappDependencyGroup = DINDependencyGroup()
+let dinAppDependencyGroup = DINDependencyGroup()
 
 let appTarget = Target(
     name: "\(projectName)-app",
@@ -129,7 +129,7 @@ let appTarget = Target(
     ],
     copyFiles: nil,
 //    entitlements: "com.test.ios.myapp.entitlements",
-    dependencies: DependencyResolver.generateAppTargetDependencies(by: myappDependencyGroup),
+    dependencies: DependencyResolver.generateAppTargetDependencies(by: dinAppDependencyGroup),
     settings: settings,
     environment: ["OS_ACTIVITY_MODE": "disable"] // 불필요 로그 제거
 )
@@ -141,7 +141,7 @@ var project = Project(
     automaticSchemesOptions: .enabled(codeCoverageEnabled: true),
     textSettings: .textSettings(usesTabs: true, indentWidth: 2, tabWidth: 2)
   ),
-  packages: DependencyResolver.generateProjectImportPackages(by: myappDependencyGroup),
+  packages: DependencyResolver.generateProjectImportPackages(by: dinAppDependencyGroup),
   settings: settings,
   targets: [appTarget]
 )
