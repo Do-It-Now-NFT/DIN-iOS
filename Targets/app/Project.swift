@@ -134,6 +134,18 @@ let appTarget = Target(
     environment: ["OS_ACTIVITY_MODE": "disable"] // 불필요 로그 제거
 )
 
+let testTarget = Target(
+  name: "\(projectName)-appTests",
+  platform: .iOS,
+  product: .unitTests,
+  productName: "\(productName)Tests",
+  bundleId: bundleId + "Tests",
+  deploymentTarget: .iOS(targetVersion: "14.0", devices: [.iphone]),
+  infoPlist: .default,
+  sources: ["Tests/**"],
+  dependencies: [.target(name: "\(projectName)-app"), .package(product: "RxSwift"), .package(product: "RxRelay"), .package(product: "RxCocoa")]
+)
+
 var project = Project(
   name: projectName,
   organizationName: organizationName,
@@ -143,6 +155,6 @@ var project = Project(
   ),
   packages: DependencyResolver.generateProjectImportPackages(by: dinAppDependencyGroup),
   settings: settings,
-  targets: [appTarget]
+  targets: [appTarget, testTarget]
 )
 
