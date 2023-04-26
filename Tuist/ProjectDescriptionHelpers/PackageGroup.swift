@@ -55,6 +55,23 @@ public class DINDependencyGroup: DependencyGroup {
     public var xcframeworks: [DINTuistPlugin.XCFramework]?
     
     public var projectTargets: [DINTuistPlugin.ProjectTarget]? = [
-        .init(name: "DINDependencyKit", path: .init(path: .relativeToRoot("Plugins/DINTuistPlugin/DINDependencyKit")), subModuleNames: ["DINDevelopKit"])
+        .init(name: "DINDependencyKit", path: .init(path: .relativeToRoot("Plugins/DINTuistPlugin/DINDependencyKit")), subModuleNames: ["DINDevelopKit"]),
+        .init(name: "DINOAuth", path: .init(path: .relativeToManifest("../DINOAuth")))
     ]
+}
+
+public class DINOAuthDependencyGroup: DependencyGroup {
+    public init() {}
+    
+    public var fetchedPacakges: [DINTuistPlugin.FetchedPackage]? = [
+        
+    ]
+    
+    public var managedPacakges: [DINTuistPlugin.ManagedPackage]? = [
+        .init(name: "GoogleSignIn", path: .init(url: "https://github.com/google/GoogleSignIn-iOS"), version: .exact("6.0.0"))
+    ]
+    
+    public var xcframeworks: [DINTuistPlugin.XCFramework]?
+    
+    public var projectTargets: [DINTuistPlugin.ProjectTarget]?
 }

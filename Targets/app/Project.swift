@@ -50,7 +50,7 @@ public var baseSettings: [String: SettingValue] = [
   "DEVELOPMENT_TEAM": "FDUY4T9LLB",
   "ENABLE_BITCODE": "NO", // SWFramework 설정,
   "CODE_SIGN_STYLE": "Automatic",
-  "OTHER_LDFLAGS": "-ObjC" // Firebase 설정
+//  "OTHER_LDFLAGS": "-ObjC" // Firebase 설정
 ]
 
 public let actionSettings: [String: SettingValue] = [
